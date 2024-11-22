@@ -1,0 +1,83 @@
+ aqui temos um exemplo de um codigo usando o visual studio 2022, e o programa console.(NET)           
+            
+            
+            
+            
+            
+            Console.WriteLine("Digite a idade do alistado (ou 'S' para sair):");
+            string inputIdade = Console.ReadLine();
+
+            if (inputIdade.Equals("S", StringComparison.OrdinalIgnoreCase))
+            {
+                break;
+            }
+
+            if (!int.TryParse(inputIdade, out int idade))
+            {
+                Console.WriteLine("Erro: Por favor, insira um número válido para a idade.");
+                continue;
+            }
+
+            if (idade < 18 || idade > 22)
+            {
+                Console.WriteLine("Erro: A idade deve estar entre 18 e 75 anos.");
+                continue;
+            }
+
+            Console.WriteLine("Digite o numero do mês que você esta se alistando (ou 'S' para sair):");
+            string inputPontuacao = Console.ReadLine();
+
+            if (inputPontuacao.Equals("S", StringComparison.OrdinalIgnoreCase))
+            {
+                break;
+            }
+
+            if (!int.TryParse(inputPontuacao, out int pontuacao))
+            {
+                Console.WriteLine("Erro: Por favor, insira um número válido para a pontuação.");
+                continue;
+            }
+
+            if (pontuacao < 1 || pontuacao > 6)
+            {
+                Console.WriteLine("Erro: A pontuação deve estar entre 1 e 6.");
+                continue;
+            }
+
+            Console.WriteLine("Digite o tempo que pretende ficar no exercito (em anos) (ou 'S' para sair):");
+            string inputTempoServico = Console.ReadLine();
+
+            if (inputTempoServico.Equals("S", StringComparison.OrdinalIgnoreCase))
+            {
+                break;
+            }
+
+            if (!int.TryParse(inputTempoServico, out int tempoServico))
+            {
+                Console.WriteLine("Erro: Por favor, insira um número válido para o tempo de serviço.");
+                continue;
+            }
+
+           
+            if (tempoServico < 1 || tempoServico >80)
+            {
+                Console.WriteLine("Erro: O tempo de serviço deve estar entre 1 e 80 anos.");
+                continue;
+            }
+
+           
+            if (idade >= 18 && idade <= 22 && pontuacao > 1 && tempoServico < 80)
+            {
+                Console.WriteLine("Alistamento Concedido");
+            }
+            else
+            {
+                Console.WriteLine("Alistamento NÃO Concedido");
+            }
+
+            Console.WriteLine(); 
+        
+
+        Console.WriteLine("Programa finalizado.");
+    
+
